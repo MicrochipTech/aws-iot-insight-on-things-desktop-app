@@ -1,0 +1,11 @@
+{
+  "name": "Insight",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "/Applications/Electron1.0.1.app/Contents/MacOS/Electron ."
+  },
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}
