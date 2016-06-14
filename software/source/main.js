@@ -115,7 +115,7 @@ var template = [
         label: 'Settings',
         accelerator: 'Shift+Command+S',
         click: function() { mainWindow.loadURL('file://' + __dirname + '/content/settings.html'); }
-      },
+      }
     ]
   },
   {
@@ -250,6 +250,7 @@ app.on('window-all-closed', function() {
   }*/
   app.quit();
 });
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

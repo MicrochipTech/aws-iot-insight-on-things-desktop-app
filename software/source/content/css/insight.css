@@ -73,6 +73,16 @@ h3, h4 {
   z-index: 900;
 }
 
+#reset-shadow {
+  position: fixed;
+  display: block;
+  left: 0;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  z-index: 900;
+}
+
 #fixed-footer {
   position: fixed;
   display: block;

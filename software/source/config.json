@@ -11,7 +11,7 @@
   },
   "win" : {
       "title" : "Insight",
-      "version" : "1.0.0",
+      "version" : "1.1.0",
       "publisher": "Microchip Technology",
       "icon" : "content/win/IoT_App_256x256.ico",
       "verbosity": 1
@@ -19,7 +19,7 @@
   "linux" : {
       "arch" : 64,
       "target" : "deb",
-      "version" : "1.0.0",
+      "version" : "1.1.0",
       "title" : "Insight",
       "comment" : "Initial Alpha Release",
       "executable" : "insight",

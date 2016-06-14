@@ -22,14 +22,13 @@ window.onload = function(){
   //check if the config file is present
   checkAndLoad();
   setTimeout(function(){
-    jsonDataDesired = JSON.stringify({"state":{"reported":{"insight_desktop_version" : app_version}}});
+    jsonDataDesired = JSON.stringify({"state":{"reported":{"insight_on_things":{"insight_on_things_desktop_version" : app_version}}}});
     updateThingStatus();
     updateAMIStatus();
   }, 1000);
 }
 
 //This is the AWS IOT main code
-
 //Include the required node modules
 var AWS = require('aws-sdk');
 var $ = require('jquery');
@@ -37,7 +36,7 @@ var fs = require('fs');
 var os = require('os');
 
 //App version sent to reported state as insight_desktop_version
-var app_version = "1.0.0";
+var app_version = "1.1.0";
 
 
 //Access keys are not global variables, passed as function
@@ -91,11 +90,12 @@ function initThing(credaccess_key, credsecret_key){
 
   iotdata = new AWS.IotData(options);
   //set the thingName is the title bar.
-  document.getElementById("thing_address").innerHTML = "IoT Device: " + credthingname;
+  document.getElementById("thing_address").innerHTML = "AWS Thing Name: " + credthingname;
 
   setInterval(updateAMIStatus, UPDATE_RATE);
   setInterval(updateLANStatus, 3000);
 }
+
 
 
 function updateLANStatus(){
