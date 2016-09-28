@@ -75,7 +75,7 @@ To setup your AWS IoT service to work with the Insight on Things Desktop Applica
   > NOTE: Make sure you replace `<AWS Account Number>` with your AWS account number
 
   ```
-  aws iam attach-group-policy --policy-arn arn:aws:iam:<AWS Account Number>:aws:policy/iotDemoPolicy --group-name iotDemo
+  aws iam attach-group-policy --policy-arn arn:aws:iam:<AWS Account Number>:policy/iotDemoPolicy --group-name iotDemo
   ```
 - Next you will need to create a user for the Insight on Things Desktop Application
 
