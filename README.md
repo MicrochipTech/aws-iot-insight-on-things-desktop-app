@@ -30,10 +30,6 @@ We have build and tested the Insight on Things Desktop Application on the follow
 > NOTE: If you are a **Microchip Employee** we have a corporate AWS account that must be used.  To setup your AWS IoT device please go to https://setup.iot.microchip.com for more information
 
 ---
-### Setting Up the AWS Command Line Interface
-Follow the instructions in the [Getting Set Up with the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) for installations for your operating system.
-
----
 ### Setting Up the AWS IoT Service for the Insight on Things Application
 
 To setup your AWS IoT service to work with the Insight on Things Desktop Application you will need to work with the awscli that you installed in the previous section.
