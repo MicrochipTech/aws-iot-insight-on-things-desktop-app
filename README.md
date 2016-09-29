@@ -48,7 +48,7 @@ To setup your AWS IoT service to work with the Insight on Things Desktop Applica
   > NOTE: Make sure you replace `<AWS IoT Region>` and `<AWS Account Number>` with the AWS-IoT region and your AWS account number
 
   ```
-  }
+  {
     "Version": "2012-10-17",
     "Statement": [{
       "Effect": "Allow",
