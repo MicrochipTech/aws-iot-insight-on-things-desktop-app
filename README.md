@@ -30,42 +30,6 @@ We have build and tested the Insight on Things Desktop Application on the follow
 > NOTE: If you are a **Microchip Employee** we have a corporate AWS account that must be used.  To setup your AWS IoT device please go to https://setup.iot.microchip.com for more information
 
 ---
-### Setting Up the AWS Command Line Interface
-#### Linux, Unix, and Windows Installations
-Follow the instructions in the [Getting Set Up with the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) for installations for your operating system.
-
-#### Mac OS X Installation
-This assumes that you have not installed previous version of Python, awscli, or openssl; if you have you will need to uninstall those versions.  You will need to use a version of openssl 1.0.0 or later to connect to AWS IoT services as TLS 1.1 is required.  To do this follow the these steps:
-
-1. Use [Homebrew](http://brew.sh/) to install the latest version of openssl with the following commands in a terminal window.  You will need to force the links so that Python will use the right version of openssl.
-
-  ```
-  brew update
-  brew install openssl
-  brew link --force openssl
-  ```
-- Reinstall Python to use the latest openssl:
-
-  ```
-  brew install python --with-brewed-openssl
-  ```
-- To verify that python was updated run the following command and make sure the version os greater than 1.0.2d
-
-  ```
-  python -c 'import ssl; print ssl.OPENSSL_VERSION'
-  ```
-- Install/upgrade the AWS CLI:
-
-  ```
-  pip install --upgrade awscli
-  ```
-- To verify the version of the AWS CLI tool installed run the following command and look for version 1.10.x or greater:
-
-  ```
-  aws --version
-  ```
-
----
 ### Setting Up the AWS IoT Service for the Insight on Things Application
 
 To setup your AWS IoT service to work with the Insight on Things Desktop Application you will need to work with the awscli that you installed in the previous section.
@@ -84,7 +48,7 @@ To setup your AWS IoT service to work with the Insight on Things Desktop Applica
   > NOTE: Make sure you replace `<AWS IoT Region>` and `<AWS Account Number>` with the AWS-IoT region and your AWS account number
 
   ```
-  }
+  {
     "Version": "2012-10-17",
     "Statement": [{
       "Effect": "Allow",
@@ -107,7 +71,7 @@ To setup your AWS IoT service to work with the Insight on Things Desktop Applica
   > NOTE: Make sure you replace `<AWS Account Number>` with your AWS account number
 
   ```
-  aws iam attach-group-policy --policy-arn arn:aws:iam:<AWS Account Number>:aws:policy/iotDemoPolicy --group-name iotDemo
+  aws iam attach-group-policy --policy-arn arn:aws:iam:<AWS Account Number>:policy/iotDemoPolicy --group-name iotDemo
   ```
 - Next you will need to create a user for the Insight on Things Desktop Application
 
