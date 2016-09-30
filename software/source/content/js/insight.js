@@ -36,7 +36,7 @@ var fs = require('fs');
 var os = require('os');
 
 //App version sent to reported state as insight_desktop_version
-var app_version = "1.1.0";
+var app_version = "1.1.1";
 
 
 //Access keys are not global variables, passed as function
