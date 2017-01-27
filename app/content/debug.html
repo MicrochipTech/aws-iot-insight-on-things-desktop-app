@@ -1,0 +1,323 @@
+<!--
+Copyright 2016 Microchip Technology Inc. (www.microchip.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Our test front end">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insight on Things</title>
+
+    <!-- <link rel="shortcut icon" href="images/favicon.png"> -->
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.min.css">
+
+    <link rel="stylesheet" href="css/insight.css">
+    <script src="js/material.min.js"></script>
+    <script src="js/insight.js"></script>
+
+
+  </head>
+  <body>
+    <div class"mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout__title" >Insight on Things DEBUG</span>
+          <div class="mdl-layout-spacer"></div>
+          <!-- <i class="material-icons" id="web_present">cloud_off</i> -->
+        </div>
+      </header>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col">
+        <!-- Textfield with Floating Label -->
+        <!-- <form action="#"> -->
+        <form action = "#">
+          <div class="mdl-select mdl-js-select mdl-select--floating-label">
+            <select class="mdl-select__input" id="commport" name="commport" onchange="enableSerial()">
+              <option value =""></option>
+            </select>
+            <label class = "mdl-select__label" for="commport">Select COMM Port</label>
+          </div>
+        </form>
+        <!-- </form> -->
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <button id="open_comm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="openDebugSerial()">
+        <!-- <i class="material-icons">add</i> -->
+          Open
+        </button>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col">
+        <!-- Textfield with Floating Label -->
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="board_IP">
+            <label class="mdl-textfield__label" for="thingname">Board IP Address</label>
+          </div>
+        </form>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col">
+        <!-- Textfield with Floating Label -->
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="socket_connection">
+            <label class="mdl-textfield__label" for="thingname">SSL Socket Status</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--6-col">
+
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="board_mac">
+            <label class="mdl-textfield__label" for="endpoint">Board MAC Address</label>
+          </div>
+        </form>
+      </div>
+
+      <div class="mdl-cell mdl-cell--6-col">
+
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="mqtt_status">
+            <label class="mdl-textfield__label" for="endpoint">MQTT Status</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+
+        <form>
+          <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="board_endpoint">
+            <label class="mdl-textfield__label" for="accesskey">Board Endpoint</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <form>
+          <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows="8" id="rawdebug"></textarea>
+            <label class="mdl-textfield__label" for="rawdebug">RAW Serial Debug</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Primary-colored flat button -->
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <button id="debug_on" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="setDebugOn()">
+        <!-- <i class="material-icons">add</i> -->
+          Debug - ON
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <button id="debug_off" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="setDebugOff()">
+        <!-- <i class="material-icons">add</i> -->
+          Debug - OFF
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <button id="debug_off" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="goHome()">
+        <!-- <i class="material-icons">add</i> -->
+          Home
+        </button>
+      </div>
+    </div>
+
+
+
+
+  </body>
+  <script>
+
+  function MaterialSelect(element) {
+'use strict';
+
+this.element_ = element;
+this.maxRows = this.Constant_.NO_MAX_ROWS;
+// Initialize instance.
+this.init();
+}
+
+MaterialSelect.prototype.Constant_ = {
+NO_MAX_ROWS: -1,
+MAX_ROWS_ATTRIBUTE: 'maxrows'
+};
+
+MaterialSelect.prototype.CssClasses_ = {
+LABEL: 'mdl-textfield__label',
+INPUT: 'mdl-select__input',
+IS_DIRTY: 'is-dirty',
+IS_FOCUSED: 'is-focused',
+IS_DISABLED: 'is-disabled',
+IS_INVALID: 'is-invalid',
+IS_UPGRADED: 'is-upgraded'
+};
+
+MaterialSelect.prototype.onKeyDown_ = function(event) {
+'use strict';
+
+var currentRowCount = event.target.value.split('\n').length;
+if (event.keyCode === 13) {
+if (currentRowCount >= this.maxRows) {
+  event.preventDefault();
+}
+}
+};
+
+MaterialSelect.prototype.onFocus_ = function(event) {
+'use strict';
+
+this.element_.classList.add(this.CssClasses_.IS_FOCUSED);
+};
+
+MaterialSelect.prototype.onBlur_ = function(event) {
+'use strict';
+
+this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);
+};
+
+MaterialSelect.prototype.updateClasses_ = function() {
+'use strict';
+this.checkDisabled();
+this.checkValidity();
+this.checkDirty();
+};
+
+MaterialSelect.prototype.checkDisabled = function() {
+'use strict';
+if (this.input_.disabled) {
+this.element_.classList.add(this.CssClasses_.IS_DISABLED);
+} else {
+this.element_.classList.remove(this.CssClasses_.IS_DISABLED);
+}
+};
+
+MaterialSelect.prototype.checkValidity = function() {
+'use strict';
+if (this.input_.validity.valid) {
+this.element_.classList.remove(this.CssClasses_.IS_INVALID);
+} else {
+this.element_.classList.add(this.CssClasses_.IS_INVALID);
+}
+};
+
+MaterialSelect.prototype.checkDirty = function() {
+'use strict';
+if (this.input_.value && this.input_.value.length > 0) {
+this.element_.classList.add(this.CssClasses_.IS_DIRTY);
+} else {
+this.element_.classList.remove(this.CssClasses_.IS_DIRTY);
+}
+};
+
+MaterialSelect.prototype.disable = function() {
+'use strict';
+
+this.input_.disabled = true;
+this.updateClasses_();
+};
+
+MaterialSelect.prototype.enable = function() {
+'use strict';
+
+this.input_.disabled = false;
+this.updateClasses_();
+};
+
+MaterialSelect.prototype.change = function(value) {
+'use strict';
+
+if (value) {
+this.input_.value = value;
+}
+this.updateClasses_();
+};
+
+MaterialSelect.prototype.init = function() {
+'use strict';
+
+if (this.element_) {
+this.label_ = this.element_.querySelector('.' + this.CssClasses_.LABEL);
+this.input_ = this.element_.querySelector('.' + this.CssClasses_.INPUT);
+
+if (this.input_) {
+  if (this.input_.hasAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE)) {
+    this.maxRows = parseInt(this.input_.getAttribute(
+        this.Constant_.MAX_ROWS_ATTRIBUTE), 10);
+    if (isNaN(this.maxRows)) {
+      this.maxRows = this.Constant_.NO_MAX_ROWS;
+    }
+  }
+
+  this.boundUpdateClassesHandler = this.updateClasses_.bind(this);
+  this.boundFocusHandler = this.onFocus_.bind(this);
+  this.boundBlurHandler = this.onBlur_.bind(this);
+  this.input_.addEventListener('input', this.boundUpdateClassesHandler);
+  this.input_.addEventListener('focus', this.boundFocusHandler);
+  this.input_.addEventListener('blur', this.boundBlurHandler);
+
+  if (this.maxRows !== this.Constant_.NO_MAX_ROWS) {
+    // TODO: This should handle pasting multi line text.
+    // Currently doesn't.
+    this.boundKeyDownHandler = this.onKeyDown_.bind(this);
+    this.input_.addEventListener('keydown', this.boundKeyDownHandler);
+  }
+
+  this.updateClasses_();
+  this.element_.classList.add(this.CssClasses_.IS_UPGRADED);
+}
+}
+};
+
+MaterialSelect.prototype.mdlDowngrade_ = function() {
+'use strict';
+this.input_.removeEventListener('input', this.boundUpdateClassesHandler);
+this.input_.removeEventListener('focus', this.boundFocusHandler);
+this.input_.removeEventListener('blur', this.boundBlurHandler);
+if (this.boundKeyDownHandler) {
+this.input_.removeEventListener('keydown', this.boundKeyDownHandler);
+}
+};
+
+// The component registers itself. It can assume componentHandler is available
+// in the global scope.
+componentHandler.register({
+constructor: MaterialSelect,
+classAsString: 'MaterialSelect',
+cssClass: 'mdl-js-select',
+widget: true
+});
+    window.onload = function(){
+      doSerial();
+    }
+  </script>
+</html>

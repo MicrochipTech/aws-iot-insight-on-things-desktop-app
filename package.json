@@ -1,0 +1,46 @@
+{
+  "name": "insight-packager",
+  "version": "1.0.0",
+  "description": "This will be used to package the app for distribution",
+  "scripts": {
+    "pack:mac": "build --mac --dir",
+    "dist:mac": "build --mac",
+    "pack:win": "build --win --x64 --dir",
+    "dist:win": "build --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MicrochipTech/aws-iot-insight-on-things-desktop-app"
+  },
+  "author": "Microchip Technology",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "electron-builder": "^11.5.1"
+  },
+  "build" : {
+    "appId": "com.microchip.insight",
+    "copyright": "Copyright © 2017 Microchip Technology",
+    "electronVersion": "0.35.4",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "app/content/osx/icon.icns"
+    },
+    "dmg": {
+      "background": "app/content/osx/background.tif",
+      "icon": "app/content/osx/dmg-icon.icns",
+      "iconSize": 80,
+      "contents": [
+        { "x": 520, "y": 225, "type": "link", "path": "/Applications" },
+        { "x": 130, "y": 225, "type": "file" }
+      ]
+    },
+    "win": {
+      "icon": "app/content/win/icon.ico"
+    },
+    "nsis":{
+      "oneClick": false,
+      "installerIcon": "app/content/win/icon.ico",
+      "license": "LICENSE"
+    }
+  }
+}

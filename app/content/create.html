@@ -1,0 +1,186 @@
+<!--
+Copyright 2016 Microchip Technology Inc. (www.microchip.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Our test front end">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insight on Things</title>
+
+    <!-- <link rel="shortcut icon" href="images/favicon.png"> -->
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.min.css">
+
+    <link rel="stylesheet" href="css/insight.css">
+    <script src="js/material.min.js"></script>
+    <script src="js/insight.js"></script>
+
+
+  </head>
+  <body>
+    <div class"mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout__title" >Insight on Things Account Setup</span>
+          <div class="mdl-layout-spacer"></div>
+          <!-- <i class="material-icons" id="web_present">cloud_off</i> -->
+        </div>
+      </header>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <h3>Setting up AWS Account and IoT Board</h3>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <div id="setup_progress" class="mdl-progress mdl-js-progress"></div>
+        <!-- <script>
+          //this.MaterialProgress.setProgress(potPercentValue);
+          // document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+          //   this.MaterialProgress.setProgress(potPercentValue);
+          // });
+        </script> -->
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-typography--text-center">
+        <h4 id="setup_progress_text"></h4>
+      </div>
+    </div>
+    <hr>
+
+    <!-- <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="iamcreate">
+          <input type="checkbox" id="iamcreate" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">AWS IAM Account Created</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="thingcreate">
+          <input type="checkbox" id="thingcreate" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">AWS Thing Created</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="policycreate">
+          <input type="checkbox" id="policycreate" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">AWS Policy Created</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="certcreate">
+          <input type="checkbox" id="certcreate" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">AWS Cert Created</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="policyattached">
+          <input type="checkbox" id="policyattached" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">AWS Policy Attached</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="certloaded">
+          <input type="checkbox" id="certloaded" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">IoT Demo Cert Loaded</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <label class="mdl-checkbox mdl-js-checkbox" for="endpointloaded">
+          <input type="checkbox" id="endpointloaded" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">IoT Demo End Point Loaded</span>
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+      </div>
+    </div> -->
+    <!-- <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="setup_rootkey">
+            <label class="mdl-textfield__label" for="endpoint">AWS Root/Admin Access Key ID</label>
+          </div>
+        </form>
+      </div>
+    </div> -->
+    <!-- <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="setup_rootsecret">
+            <label class="mdl-textfield__label" for="accesskey">AWS Root/Admin Secret Access Key</label>
+          </div>
+        </form>
+      </div>
+    </div> -->
+
+    <!-- Primary-colored flat button -->
+    <div class="mdl-grid">
+      <!-- <div class="mdl-cell mdl-cell--6-col">
+        <button id="upload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="sendSerialLarge_noChunk()">
+          Upload to Board
+        </button>
+      </div> -->
+      <div class="mdl-cell mdl-cell--6-col">
+        <button id="shadows" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="displayShadow()">
+        <!-- <i class="material-icons">add</i> -->
+          Shadows
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--6-col">
+        <button id="home" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled onclick="goHome()">
+        <!-- <i class="material-icons">add</i> -->
+          Home
+        </button>
+      </div>
+    </div>
+
+
+
+
+  </body>
+  <script>
+  window.onload = function(){
+    startCreation();
+  }
+  </script>
+</html>
