@@ -1,0 +1,251 @@
+/*
+Copyright 2016 Microchip Technology Inc. (www.microchip.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+h3, h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 480px) and (max-width: 839px) {
+  .mdl-cell {
+    margin: 8px;
+    width: calc(33.3333333333% - 16px); }
+  .mdl-cell--6-col,
+  .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
+    width: calc(50% - 16px); }
+  .mdl-cell--12-col,
+  .mdl-cell--12-col-desktop.mdl-cell--12-col-desktop {
+    width: calc(100% - 16px); }
+}
+
+.mdl-layout__header-row {
+  padding-left: 16px;
+}
+
+.mdl-data-table {
+    font-size: 24px;
+    width:100%;
+}
+
+.mdl-data-table td, .mdl-data-table th {
+  text-align: center;
+}
+
+.mdl-data-table thead td {
+    background-color: #eeeeee;
+}
+
+.mdl-data-table tbody td {
+    color: blue;
+    text-decoration: underline;
+}
+
+.mdl-data-table tbody tr:hover {
+  cursor: pointer;
+}
+
+.mdl-layout__header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mdl-progress {
+  height: 20px;
+  width: auto;
+}
+
+.button_icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 28px;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 1px solid #C8C8C8;
+}
+
+.switch_area {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#home_button {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  z-index: 900;
+}
+
+#reset-shadow {
+  position: fixed;
+  display: block;
+  left: 0;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  z-index: 900;
+}
+
+#fixed-footer {
+  position: fixed;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  z-index: 900;
+}
+
+.mdl-select {
+position: relative;
+font-size: 16px;
+display: inline-block;
+box-sizing: border-box;
+width: 300px;
+max-width: 100%;
+margin: 0;
+padding: 20px 0;
+}
+
+.mdl-select__input {
+border: none;
+border-bottom: 1px solid rgba(0,0,0, 0.12);
+display: inline-block;
+font-size: 16px;
+margin: 0;
+padding: 4px 0;
+width: 100%;
+background: 16px;
+text-align: left;
+color: inherit;
+}
+
+.mdl-select.is-focused .mdl-select__input {	outline: none; }
+.mdl-select.is-invalid .mdl-select__input {
+border-color: rgb(222, 50, 38);
+box-shadow: none;
+}
+
+.mdl-select.is-disabled .mdl-select__input {
+background-color: transparent;
+border-bottom: 1px dotted rgba(0,0,0, 0.12);
+}
+
+.mdl-select__label {
+bottom: 0;
+color: rgba(0,0,0, 0.26);
+font-size: 16px;
+left: 0;
+right: 0;
+pointer-events: none;
+position: absolute;
+top: 24px;
+width: 100%;
+overflow: hidden;
+white-space: nowrap;
+text-align: left;
+}
+
+.mdl-select.is-dirty .mdl-select__label { visibility: hidden; }
+
+.mdl-select--floating-label .mdl-textfield__label {
+-webkit-transition-duration: 0.2s;
+transition-duration: 0.2s;
+-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdl-select--floating-label.is-focused .mdl-select__label,
+.mdl-select--floating-label.is-dirty .mdl-select__label {
+color: rgb(33,150,243);
+font-size: 12px;
+top: 4px;
+visibility: visible;
+}
+
+.mdl-select--floating-label.is-focused .mdl-select__expandable-holder .mdl-select__label,
+.mdl-select--floating-label.is-dirty .mdl-select__expandable-holder .mdl-select__label {
+top: -16px;
+}
+
+.mdl-select--floating-label.is-invalid .mdl-select__label {
+color: rgb(222, 50, 38);
+font-size: 12px;
+}
+
+.mdl-select__label:after {
+background-color: rgb(33,150,243);*/
+bottom: 20px;
+content: '';
+height: 2px;
+left: 45%;
+position: absolute;
+-webkit-transition-duration: 0.2s;
+transition-duration: 0.2s;
+-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+visibility: hidden;
+width: 10px;
+}
+
+.mdl-select.is-focused .mdl-select__label:after {
+left: 0;
+visibility: visible;
+width: 100%;
+}
+
+.mdl-select.is-invalid .mdl-select__label:after {
+background-color: rgb(222, 50, 38);
+}
+
+.mdl-select__error {
+color: rgb(222, 50, 38);
+position: absolute;
+font-size: 12px;
+margin-top: 3px;
+visibility: hidden;
+}
+
+.mdl-select.is-invalid .mdl-select__error {
+visibility: visible;
+}
+
+.mdl-select__expandable-holder {
+display: inline-block;
+position: relative;
+margin-left: 32px;
+-webkit-transition-duration: 0.2s;
+transition-duration: 0.2s;
+-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+display: inline-block;
+max-width: 0.1px;
+}
+
+.mdl-select.is-focused .mdl-select__expandable-holder, .mdl-select.is-dirty .mdl-select__expandable-holder {
+max-width: 600px;
+}
+
+.mdl-select__expandable-holder .mdl-select__label:after {
+bottom: 0;
+}

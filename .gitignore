@@ -1,1 +1,7 @@
-*.log
+#### Node_modules ####
+**/node_modules
+**/*.log
+
+#### Build Artifacts ####
+**/dist
+**/build
